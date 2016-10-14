@@ -1,11 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TITLE</title>
-  </head>
-  <body>
-  </body>
-</html>
+var today = new Date();
+var h = today.getHours();
+var m = today.getMinutes();
+var s = today.getSeconds();
+
+function startTime() {
+var today = new Date();
+var h = today.getHours();
+var m = today.getMinutes();
+var s = today.getSeconds();
+m = checkTime (m);
+s = checkTime (s);
+document.getElementById('clock').innerHTML = h + ":" + m + ":" + s;
+var t = setTimeout(startTime, 1);
+}
+function checkTime(i) {
+if (i < 10) {i = "0" + i};
+return i;
+}
+
+function getRandomColor() {
+
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
